@@ -1,0 +1,17 @@
+{
+  "tip.starrailexpressroles.avenger.failure": "Your principal %s has died",
+  "tip.starrailexpressroles.avenger.revenge_start": "Start your revenge plan!",
+  "tip.starrailexpressroles.avenger.prompt_killer": "Tip: Principal died from %s",
+
+  "hud.starrailexpressroles.avenger.prompt_killer": "Your principal died from %s (for reference)",
+  "hud.starrailexpressroles.avenger.prompt_principal": "Your principal is %s",
+
+  "announcement.role.starrailexpressroles.avenger": "Avenger",
+  "announcement.goals.starrailexpressroles.avenger": "Revenge for the deceased principal!",
+
+  "guidebook.namespace.starrailexpressroles": "Mod: Star Rail Express Roles",
+
+  "guidebook.role.starrailexpressroles:avenger": "Avenger",
+  "guidebook.role.title.starrailexpressroles:avenger": "Faithful Underdog",
+  "guidebook.role.description.starrailexpressroles:avenger": "Avenger was originally a bodyguard, entrusted by a principal to protect his safety.\n\nBut this is a tough job, the Avenger is easy to fail.\n\nIf the principal dies, the Avenger will receive a revolver and become a true Avenger.\nMeanwhile, if the principal is killed instead of accidentally dying, the Avenger will know the name of the murderer.\n\nNote: Killers and neutrals may also entrust you to protect them.\nCan you see through their conspiracy?"
+}

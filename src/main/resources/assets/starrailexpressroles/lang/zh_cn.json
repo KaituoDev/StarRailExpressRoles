@@ -1,0 +1,17 @@
+{
+  "tip.starrailexpressroles.avenger.failure": "你的委托人%s已死亡",
+  "tip.starrailexpressroles.avenger.revenge_start": "开始你的复仇计划！",
+  "tip.starrailexpressroles.avenger.prompt_killer": "提示：委托人死于%s",
+
+  "hud.starrailexpressroles.avenger.prompt_killer": "你的委托人死于%s(供参考)",
+  "hud.starrailexpressroles.avenger.prompt_principal": "你的委托人是%s",
+
+  "announcement.role.starrailexpressroles.avenger": "复仇者",
+  "announcement.goals.starrailexpressroles.avenger": "为死去的委托人报仇！",
+
+  "guidebook.namespace.starrailexpressroles": "模组: Star Rail Express Roles",
+
+  "guidebook.role.starrailexpressroles:avenger": "复仇者",
+  "guidebook.role.title.starrailexpressroles:avenger": "愚忠的输家",
+  "guidebook.role.description.starrailexpressroles:avenger": "复仇者本是一名保镖，受一位委托人的委托，保护他的安全。\n\n但这是一项艰巨的工作，复仇者很容易失败。\n\n若委托人死亡，复仇者将获得手枪，化身为真正的复仇者。\n同时，若委托人的死因是被人杀死，则复仇者将会知晓凶手的姓名。\n\n注意：杀手和中立玩家也有可能委托你保护他们。\n你能否识破他们的阴谋？"
+}

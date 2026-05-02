@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "starrailexpressroles",
+  "version": "${version}",
+  "name": "StarRailExpressRoles",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/starrailexpressroles/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "fun.kaituo.starrailexpressroles.client.StarRailExpressRolesDataGenerator"
+    ],
+    "client": [
+      "fun.kaituo.starrailexpressroles.client.StarRailExpressrolesClient"
+    ],
+    "main": [
+      "fun.kaituo.starrailexpressroles.StarRailExpressRoles"
+    ],
+    "cardinal-components": [
+      "fun.kaituo.starrailexpressroles.components.ComponentManager"
+    ]
+  },
+  "custom": {
+    "cardinal-components": [
+      "starrailexpressroles:ability",
+      "starrailexpressroles:avenger"
+    ]
+  },
+  "mixins": [
+    "starrailexpressroles.mixins.json",
+    {
+      "config": "starrailexpressroles.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}",
+    "harpymodloader": "*"
+  }
+}
