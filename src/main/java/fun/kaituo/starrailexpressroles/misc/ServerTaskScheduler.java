@@ -5,15 +5,21 @@ import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Vector;
 
 public class ServerTaskScheduler {
 
     private static final List<DelayedTask> delayedTasks = new ArrayList<>();
     private static final List<LoopedTask> loopedTasks = new ArrayList<>();
 
+    private static final List<DelayedTask> delayedTaskBuffer = new Vector<>();
+    private static final List<LoopedTask> loopedTaskBuffer = new Vector<>();
+
     public static void init() {
         ServerTickEvents.END_SERVER_TICK.register(server -> {
 
+            delayedTasks.addAll(delayedTaskBuffer);
+            delayedTaskBuffer.clear();
             Iterator<DelayedTask> dt = delayedTasks.iterator();
             while (dt.hasNext()) {
                 DelayedTask task = dt.next();
@@ -23,6 +29,8 @@ public class ServerTaskScheduler {
                 }
             }
 
+            loopedTasks.addAll(loopedTaskBuffer);
+            loopedTaskBuffer.clear();
             Iterator<LoopedTask> lt = loopedTasks.iterator();
             while (lt.hasNext()) {
                 LoopedTask task = lt.next();
@@ -45,16 +53,16 @@ public class ServerTaskScheduler {
         if (delayTicks <= 0) {
             task.run();
         } else {
-            delayedTasks.add(new DelayedTask(task, delayTicks));
+            delayedTaskBuffer.add(new DelayedTask(task, delayTicks));
         }
     }
 
     public static void runTaskTimer(Runnable task, int intervalTicks) {
-        loopedTasks.add(new LoopedTask(task, intervalTicks, false, 0));
+        loopedTaskBuffer.add(new LoopedTask(task, intervalTicks, false, 0));
     }
 
     public static void runTaskLoop(Runnable task, int intervalTicks, int cycleNum) {
-        loopedTasks.add(new LoopedTask(task, intervalTicks, true, cycleNum));
+        loopedTaskBuffer.add(new LoopedTask(task, intervalTicks, true, cycleNum));
     }
 
     private static class DelayedTask {

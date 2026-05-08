@@ -1,4 +1,12 @@
 {
+  "key.starrailexpressroles.ability": "Ability",
+  "tip.starrailexpressroles.cooldown": "Ability usable in %ss",
+  "tip.starrailexpressroles.ability.can_use": "Use %s to activate ability",
+  "tip.starrailexpressroles.ability.not_enough_money": "%s§f\uE781§r required to activate ability",
+
+  "shop.purchase_failed": "Purchase Failed",
+  "tip.cooldown_temporary": "On cooldown...",
+
   "tip.starrailexpressroles.avenger.failure": "Your principal %s has died",
   "tip.starrailexpressroles.avenger.revenge_start": "Start your revenge plan!",
   "tip.starrailexpressroles.avenger.prompt_killer": "Tip: Principal died from %s",
@@ -6,12 +14,21 @@
   "hud.starrailexpressroles.avenger.prompt_killer": "Your principal died from %s (for reference)",
   "hud.starrailexpressroles.avenger.prompt_principal": "Your principal is %s",
 
+  "death_reason.starrailexpressroles.creeper_explosion": "creeper explosion.",
+
   "announcement.role.starrailexpressroles.avenger": "Avenger",
   "announcement.goals.starrailexpressroles.avenger": "Revenge for the deceased principal!",
+
+  "announcement.role.starrailexpressroles.creeper": "Creeper",
+  "announcement.goals.starrailexpressroles.creeper": "Art is an explosion!",
 
   "guidebook.namespace.starrailexpressroles": "Mod: Star Rail Express Roles",
 
   "guidebook.role.starrailexpressroles:avenger": "Avenger",
   "guidebook.role.title.starrailexpressroles:avenger": "Faithful Underdog",
-  "guidebook.role.description.starrailexpressroles:avenger": "Avenger was originally a bodyguard, entrusted by a principal to protect his safety.\n\nBut this is a tough job, the Avenger is easy to fail.\n\nIf the principal dies, the Avenger will receive a revolver and become a true Avenger.\nMeanwhile, if the principal is killed instead of accidentally dying, the Avenger will know the name of the murderer.\n\nNote: Killers and neutrals may also entrust you to protect them.\nCan you see through their conspiracy?"
+  "guidebook.role.description.starrailexpressroles:avenger": "Avenger was originally a bodyguard, entrusted by a principal to protect his safety.\n\nBut this is a tough job, the Avenger is easy to fail.\n\nIf the principal dies, the Avenger will receive a revolver and become a true Avenger.\nMeanwhile, if the principal is killed instead of accidentally dying, the Avenger will know the name of the murderer.\n\nNote: Killers and neutrals may also entrust you to protect them.\nCan you see through their conspiracy?",
+
+  "guidebook.role.starrailexpressroles:creeper": "Creeper",
+  "guidebook.role.title.starrailexpressroles:creeper": "Artist of Explosion",
+  "guidebook.role.description.starrailexpressroles:creeper": "Art is an explosion！\n\nCreepers could ignite themselves, and explode after a few seconds.\nThey could blow up the players within a few blocks, and escape unharmed.\n\nWhen a Creeper is ignited, he will stop in place and make a hissing sound.\nMeanwhile, there will be particles on his head.\n\n\"Run! Silly kids, RUN!\""
 }

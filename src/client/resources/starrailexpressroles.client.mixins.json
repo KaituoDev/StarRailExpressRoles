@@ -4,6 +4,9 @@
   "package": "fun.kaituo.starrailexpressroles.client.mixin",
   "compatibilityLevel": "JAVA_21",
   "client": [
+    "roles.creeper.ClientCreeperHudMixin",
+    "roles.creeper.ClientCreeperShopMixin",
+    "roles.creeper.CreeperLimitKeysMixin"
   ],
   "injectors": {
     "defaultRequire": 1
@@ -12,6 +15,8 @@
     "requireAnnotations": true
   },
   "mixins": [
-    "roles.avenger.AvengerHudMixin"
+    "gui.IncomeIconMixin",
+    "roles.avenger.ClientAvengerHudMixin",
+    "roles.creeper.CreeperInstinctMixin"
   ]
 }

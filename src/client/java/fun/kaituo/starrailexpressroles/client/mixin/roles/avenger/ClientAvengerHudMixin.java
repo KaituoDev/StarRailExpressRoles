@@ -17,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(RoleNameRenderer.class)
-public abstract class AvengerHudMixin {
+public abstract class ClientAvengerHudMixin {
 
     @Unique
     private static final int killerColor = 16603720;

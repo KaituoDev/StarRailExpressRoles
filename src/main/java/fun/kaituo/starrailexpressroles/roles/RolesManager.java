@@ -8,7 +8,10 @@ import dev.doctor4t.wathe.game.GameFunctions;
 import fun.kaituo.starrailexpressroles.StarRailExpressRoles;
 import fun.kaituo.starrailexpressroles.components.AbilityPlayerComponent;
 import fun.kaituo.starrailexpressroles.misc.ServerTaskScheduler;
+import fun.kaituo.starrailexpressroles.packet.host.AbilityC2SPacket;
 import fun.kaituo.starrailexpressroles.roles.avenger.AvengerComponent;
+import fun.kaituo.starrailexpressroles.roles.creeper.CreeperAbility;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.util.Identifier;
 import org.agmas.harpymodloader.events.ModdedRoleAssigned;
@@ -18,8 +21,10 @@ import org.agmas.harpymodloader.modifiers.Modifier;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 
 public class RolesManager {
 
@@ -42,11 +47,41 @@ public class RolesManager {
             WatheRoles.CIVILIAN.getMaxSprintTime(),
             false
     ));
+    public static Role CREEPER = registerRole(new Role(
+            Identifier.of(StarRailExpressRoles.MOD_ID, "creeper"),
+            0x36AE24,
+            false,
+            true,
+            Role.MoodType.FAKE,
+            -1,
+            true
+    ));
 
     public static Role registerRole(Role role) {
         WatheRoles.registerRole(role);
         ROLES.put(role.identifier().getPath(), role);
         return role;
+    }
+
+    ///  注册身份技能
+    public static void registerRolesAbility() {
+        ServerPlayNetworking.registerGlobalReceiver(AbilityC2SPacket.ID, (payload, context) -> {
+            CreeperAbility.register(context.player());
+        });
+    }
+
+    /// 添加有被动收入的身份
+    public static List<Role> rolesHavePassiveIncome() {
+        List<Role> roles = new ArrayList<>();
+        roles.add(RolesManager.CREEPER);
+        return List.copyOf(roles);
+    }
+
+    /// 添加有任务收入的身份
+    public static List<Role> rolesHaveTaskIncome() {
+        List<Role> roles = new ArrayList<>();
+        roles.add(RolesManager.CREEPER);
+        return List.copyOf(roles);
     }
 
     /**
@@ -103,5 +138,7 @@ public class RolesManager {
         resetEvents();
 
         setDefaultEvents();
+
+        registerRolesAbility();
     }
 }

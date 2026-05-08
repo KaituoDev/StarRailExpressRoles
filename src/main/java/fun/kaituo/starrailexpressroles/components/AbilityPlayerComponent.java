@@ -14,7 +14,11 @@ import org.ladysnake.cca.api.v3.component.tick.ServerTickingComponent;
 
 public class AbilityPlayerComponent implements AutoSyncedComponent, ServerTickingComponent, ClientTickingComponent {
 
-    public static final ComponentKey<AbilityPlayerComponent> KEY = ComponentRegistry.getOrCreate(Identifier.of(StarRailExpressRoles.MOD_ID, "ability"), AbilityPlayerComponent.class);
+    public static final ComponentKey<AbilityPlayerComponent> KEY = ComponentRegistry.getOrCreate(
+            Identifier.of(StarRailExpressRoles.MOD_ID, "ability"),
+            AbilityPlayerComponent.class
+    );
+
     private final PlayerEntity player;
     public int cooldown = 0;
 

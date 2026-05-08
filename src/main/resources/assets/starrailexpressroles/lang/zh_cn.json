@@ -1,4 +1,12 @@
 {
+  "key.starrailexpressroles.ability": "能力",
+  "tip.starrailexpressroles.cooldown": "能力在 %s 秒后可用",
+  "tip.starrailexpressroles.ability.can_use": "按下 %s 键发动能力",
+  "tip.starrailexpressroles.ability.not_enough_money": "需要 %s§f\uE781§r 发动能力",
+
+  "shop.purchase_failed": "购买失败",
+  "tip.cooldown_temporary": "冷却中...",
+
   "tip.starrailexpressroles.avenger.failure": "你的委托人%s已死亡",
   "tip.starrailexpressroles.avenger.revenge_start": "开始你的复仇计划！",
   "tip.starrailexpressroles.avenger.prompt_killer": "提示：委托人死于%s",
@@ -6,12 +14,22 @@
   "hud.starrailexpressroles.avenger.prompt_killer": "你的委托人死于%s(供参考)",
   "hud.starrailexpressroles.avenger.prompt_principal": "你的委托人是%s",
 
+  "death_reason.starrailexpressroles.creeper_explosion": "被苦力怕炸飞",
+
   "announcement.role.starrailexpressroles.avenger": "复仇者",
   "announcement.goals.starrailexpressroles.avenger": "为死去的委托人报仇！",
+
+  "announcement.role.starrailexpressroles.creeper": "苦力怕",
+  "announcement.goals.starrailexpressroles.creeper": "艺术就是爆炸！",
+
 
   "guidebook.namespace.starrailexpressroles": "模组: Star Rail Express Roles",
 
   "guidebook.role.starrailexpressroles:avenger": "复仇者",
   "guidebook.role.title.starrailexpressroles:avenger": "愚忠的输家",
-  "guidebook.role.description.starrailexpressroles:avenger": "复仇者本是一名保镖，受一位委托人的委托，保护他的安全。\n\n但这是一项艰巨的工作，复仇者很容易失败。\n\n若委托人死亡，复仇者将获得手枪，化身为真正的复仇者。\n同时，若委托人的死因是被人杀死，则复仇者将会知晓凶手的姓名。\n\n注意：杀手和中立玩家也有可能委托你保护他们。\n你能否识破他们的阴谋？"
+  "guidebook.role.description.starrailexpressroles:avenger": "复仇者本是一名保镖，受一位委托人的委托，保护他的安全。\n\n但这是一项艰巨的工作，复仇者很容易失败。\n\n若委托人死亡，复仇者将获得手枪，化身为真正的复仇者。\n同时，若委托人的死因是被人杀死，则复仇者将会知晓凶手的姓名。\n\n注意：杀手和中立玩家也有可能委托你保护他们。\n你能否识破他们的阴谋？",
+
+  "guidebook.role.starrailexpressroles:creeper": "苦力怕",
+  "guidebook.role.title.starrailexpressroles:creeper": "爆破艺术家",
+  "guidebook.role.description.starrailexpressroles:creeper": "艺术就是爆炸！\n\n苦力怕可以将自己点燃，并在几秒钟后爆炸。\n他能炸死自己身边数格以内的玩家，并全身而退。\n\n苦力怕在燃着时，会定在原地发出嘶嘶声。\n同时，他头上会生成粒子效果。\n\n“傻孩子们，快！跑！啊！”"
 }

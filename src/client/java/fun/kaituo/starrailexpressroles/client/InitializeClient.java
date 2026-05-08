@@ -1,9 +1,15 @@
 package fun.kaituo.starrailexpressroles.client;
 
+import dev.doctor4t.wathe.api.Role;
+import dev.doctor4t.wathe.cca.GameWorldComponent;
 import fun.kaituo.starrailexpressroles.StarRailExpressRoles;
+import fun.kaituo.starrailexpressroles.packet.host.AbilityC2SPacket;
+import fun.kaituo.starrailexpressroles.roles.RolesManager;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
 import org.agmas.noellesroles.client.NoellesrolesClient;
@@ -27,13 +33,32 @@ public class InitializeClient {
         }
     }
 
-    public static void initializeAll() {
-        registerAbilityKey();
-        initializeRenders();
+    /// 设置有技能的角色
+    public static void setRoleAbilityPackets() {
+        ClientTickEvents.END_CLIENT_TICK.register(client -> {
+            if (abilityBind == null) return;
+            if (abilityBind.isPressed()) {
+                client.execute(() -> {
+                    if (MinecraftClient.getInstance().player == null) return;
+                    GameWorldComponent gameWorld = GameWorldComponent.KEY.get(MinecraftClient.getInstance().player.getWorld());
+                    boolean sendAbilityPacket = false;
+                    Role[] rolesWithAbility = new Role[]{
+                            RolesManager.CREEPER
+                    };
+                    for (Role role : rolesWithAbility) {
+                        if (gameWorld.isRole(MinecraftClient.getInstance().player, role)) sendAbilityPacket = true;
+                    }
+                    if (!sendAbilityPacket) return;
+                    ClientPlayNetworking.send(new AbilityC2SPacket());
+                });
+            }
+        });
     }
 
-    private static void initializeRenders() {
+    public static void initializeAll() {
+        registerAbilityKey();
 
+        setRoleAbilityPackets();
     }
 
 }
