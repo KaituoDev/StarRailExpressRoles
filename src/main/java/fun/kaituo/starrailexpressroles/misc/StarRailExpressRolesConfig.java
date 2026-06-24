@@ -25,7 +25,7 @@ public class StarRailExpressRolesConfig {
     /// Roles
     // Creeper
     @SerialEntry
-    public int CreeperExplodePrice = 250;
+    public int CreeperExplodePrice = 200;
     @SerialEntry
     public int CreeperExplodeCooldown = GameConstants.getInTicks(1,0) / 20;
     @SerialEntry

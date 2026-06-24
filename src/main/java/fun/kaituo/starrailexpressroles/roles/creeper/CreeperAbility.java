@@ -20,7 +20,8 @@ public class CreeperAbility {
 
         if (GameFunctions.isPlayerAliveAndSurvival(player)
                 && gameWorld.isRole(player, RolesManager.CREEPER)
-                && ability.cooldown <= 0) {
+                && ability.cooldown <= 0
+                && playerShop.balance >= StarRailExpressRolesConfig.HANDLER.instance().CreeperExplodePrice) {
 
             playerShop.balance -= StarRailExpressRolesConfig.HANDLER.instance().CreeperExplodePrice;
             playerShop.sync();
